@@ -74,6 +74,24 @@ def extract_solved_problems(doc):
                 texts.append(item.get("description", ""))
     return " ".join(texts)
 
+def extract_drawbacks(doc):
+    texts = []
+    sp = doc.get("drawbacks", [])
+    if isinstance(sp, str):
+        texts.append(sp)
+    elif isinstance(sp, dict):
+        # handle legacy object (mapping) format
+        for k, v in sp.items():
+            texts.append(str(k))
+            texts.append(str(v))
+    elif isinstance(sp, list):
+        for item in sp:
+            if isinstance(item, str):
+                texts.append(item)
+            elif isinstance(item, dict):
+                texts.append(item.get("title", ""))
+                texts.append(item.get("description", ""))
+    return " ".join(texts)
 
 def extract_examples(doc):
     texts = []
@@ -102,6 +120,11 @@ idx = lunr(
             "field_name": "solved_problems",
             "boost": 3,
             "extractor": extract_solved_problems,
+        },
+        {
+            "field_name": "drawbacks",
+            "boost": 3,
+            "extractor": extract_drawbacks,
         },
         {"field_name": "examples", "boost": 1, "extractor": extract_examples},
     ],

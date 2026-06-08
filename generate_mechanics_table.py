@@ -35,17 +35,18 @@ def generate_mechanics_table():
                     'long_description': process_field(mechanic.get('long_description', '')),
                     'examples': process_field(mechanic.get('examples', [])),
                     'solved_problems': process_field(mechanic.get('solved_problems', ''))
+                    'drawbacks': process_field(mechanic.get('drawbacks', ''))
                 })
         except Exception as e:
             print(f"Error processing {yaml_file}: {e}")
     
     # markdown table template
     markdown = "# Game Mechanics Database\n\n"
-    markdown += "| Name | Symbol | Category | Short Description | Long Description | Examples | Solved Problems |\n"
-    markdown += "|------|--------|----------|------------------|------------------|----------|----------------|\n"
+    markdown += "| Name | Symbol | Category | Short Description | Long Description | Examples | Solved Problems | Drawbacks |\n"
+    markdown += "|------|--------|----------|------------------|------------------|----------|----------------|-----------|\n"
     
     for mechanic in sorted(mechanics_data, key=lambda x: (x['category'], x['name'])):
-        markdown += f"| {mechanic['name']} | {mechanic['symbol']} | {mechanic['category']} | {mechanic['short_description']} | {mechanic['long_description']} | {mechanic['examples']} | {mechanic['solved_problems']} |\n"
+        markdown += f"| {mechanic['name']} | {mechanic['symbol']} | {mechanic['category']} | {mechanic['short_description']} | {mechanic['long_description']} | {mechanic['examples']} | {mechanic['solved_problems']} | {mechanic['drawbacks']} |\n"
     
     with open('mechanics_database.md', 'w') as f:
         f.write(markdown)
