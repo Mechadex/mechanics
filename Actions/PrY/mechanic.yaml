@@ -3,19 +3,37 @@ mechanic:
   name: "Parry"
   category: "Actions"
   long_description: |
-    A Parry is a high-skill defensive action that deflects an incoming attack if timed correctly within a very brief active window. Unlike a block, which mitigates damage, a successful parry typically negates all damage and immediately puts the attacker into a vulnerable 'stagger' or 'riposte' state. This creates a massive opening for a counter-attack, making it the ultimate risk-versus-reward defensive maneuver.
-
-    The risk is absolute: missing the parry window leaves the player completely open to taking full damage. To ensure fairness, designers often include specific 'unparryable' attacks, telegraphed with a unique visual cue, which force the player to rely on other defensive options.
+    A Parry is a timing-based defensive action that deflects or nullifies an incoming attack if timed correctly within a very brief active window. Unlike a block, which mitigates damage or offloads it to stamina, a successful parry typically negates all damage, allows the defender to recover instantly, and puts the attacker into a vulnerable 'stagger' or 'riposte' state. This creates an opening for a counter-attack, or in some games a powered-up counter-attack.
+    
+    If every attack can be parried, it can create samey and repetitive gameplay, so most designers will include 'unblockable' or 'unparryable' attacks to help create variety and force players to rely on other defensive options.
+    
+    Parries have a very different impact on multiplayer games compared to single-player games, because players can predict and adapt to an opponent's parry tendencies, potentially creating a new layer of mind games.
   short_description: "Timed counter to enemy attacks."
   solved_problems:
+    - title: "Inactive Defense"
+      description: |
+        When the primary defensive action is blocking, parrying can help make defense feel more active and skillful. In multiplayer games, they can help broaden the range of mixups available to a defender, enabling deeper mind games.
+    - title: "Beginner-Friendly Skill-building"
+      description: |
+        Because parrying requires good timing, it can feel intimidating to beginners, but because all it requires is timing, that makes it fairly simple to pick up in much the same way as rhythm games. This helps give beginners something tangible and simple to improve at without overwhelming them with more fuzzy analog variables like stamina, position, animation timing, frame advantage, hitbox shape, or enemy density.
+    - title: "Removes 'Checkmate' Moments"
+      description: |
+        Sometimes it's possible for a player to be cornered by an enemy or opponent with no way out, like a 'Checkmate' in Chess. If parrying can beat any attack, then it provides players a way to escape these situations. If parrying can only beat most attacks, but the remaining ones have different counters, then it can still help players escape checkmate moments. In a multiplayer context this means turning guaranteed endgame strategies into mixups, and in single player games this can help players feel like the game is fair and like they always have a way to succeed or something to improve at.
+  drawbacks:
     - title: "Defensive stalemates"
       description: |
-        When both the player and an enemy have strong defensive options, combat can devolve into a stalemate where each party waits for the other to drop their guard. A Parry mechanic breaks this deadlock. It introduces a high-risk, timing-based option that defeats a standard block or attack, instantly turning a defensive situation into a decisive offensive advantage.
+        When both the player and an opponent have strong defensive options, combat can devolve into a stalemate where each party waits for the other to drop their guard. Parry can make this stalemate worse, due to making the punishment for attacking that much greater. This problem is even worse when attacks are slow enough to be reacted to.
+    - title: "Passive Play"
+      description: |
+        In a single player game, when the option with the highest reward payoff is parrying, it can be better to simply wait for the enemy to attack and then parry, rather than trying to mix parries into a broader playstyle. This can look and feel impressive to lower skill level players, but it can be boring for more skillful ones.
+    - title: "Shallow Gameplay"
+      description: |
+        Parries only test timing skill. Parries don't care about player or enemy positioning, and they rarely change player or enemy positioning. This has a tendency to collapse encounters into just tests of timing.
   examples:
     - title: "Sekiro: Shadows Die Twice"
       description: |
-        The 'Deflect' system is the game's central mechanic, used offensively to break enemy 'Posture.' This design makes the parry the primary tool for creating finishing blows, as opposed to just a defensive counter.
+        The 'Deflect' system is the game's central mechanic, used offensively to break enemy 'Posture.' Unlike blocking, when a deflect is performed, your posture cannot break, meaning you can parry any attack indefinitely, except 'Perilous Attacks.' Sekiro's parry is 12 frames in duration, making it reasonably easy for almost any player to perform.
     - title: "Street Fighter III: 3rd Strike"
       description: |
-        The 'Red Parry' is iconic for its high skill ceiling and its role in competitive history. It allows a player to parry multi-hit super moves by repeatedly timing the input, leading to spectacular, viewer-friendly displays of mastery.
-  isHumanWritten: false
+        Street Fighter III's Parry is iconic for its high skill ceiling and its role in competitive history. It is triggered by tapping either forward or down, creating a 10 frame window to parry the next incoming hit, but a 23 frame lock-out window before you can parry again. If you successfully parry a move, you will be able to act near-instantly, while your opponent still needs to go through the recovery of their move. The game also features a parry from block called a Red Parry, which only has a 3 frame window. Because parries are split between high and low (parrying mid and high versus just low attacks respectively) and both parries lose to throws, they help create new mixups on parry that are not mixups on block. So players who attempt to parry are opening themselves up in ways they would not be vulnerable if they simply blocked. Famously, Daigo Umehara was capable of parrying all 17 hits of Chun Li's Super Art 2 in a clip called Evo Moment #37.
+  isHumanWritten: true

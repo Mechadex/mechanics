@@ -23,6 +23,10 @@ mechanic:
     - title: "Breaking immersion during cutscenes"
       description: |
         To keep players engaged during long cinematics, designers need a form of light interaction. QTEs provide this by using minimal, clearly telegraphed prompts for simple actions. This keeps the player focused as an active participant without cluttering the screen with a full UI. As a bonus, it also prevents the jarring 'fumble for the controller' when the scene suddenly demands input.
+  drawbacks:
+    - title: "Shallow Payoffs"
+      description: |
+        QTEs typically do not have varying standards of success for varied outcomes, and tend not to incorporate any other inputs besides the button presses of the player. This makes them rather shallow skill tests that don't tend to have much integration with the broader systems of a game, especially because they typically put the player character into a state where nothing around them is capable of affecting them, focusing the player solely on the button prompt.
   examples:
     - title: "God of War (Original Trilogy)"
       description: |
@@ -46,6 +50,10 @@ mechanic:
     - title: "Slow-paced building in a fast-paced game"
       description: |
         It's a design conflict to have a deep building system in a fast-paced combat game, as traditional building is too slow to be used effectively under pressure. Modular construction solves this. By using a limited set of pieces that snap together instantly, it transforms building into a rapid, reflexive combat skill, allowing for dynamic creation of cover and structures mid-fight.
+  drawbacks:
+    - title: "Lack of Individual Identity"
+      description: |
+        Modular constructions can look samey as players learn to identify the parts that buildings are made of. It can leave players feeling unable to express themselves, or like they are doing the same thing as every other player. If developer-made assets are also made using the same modular construction tools, then it can contribute even more to a samey feeling across a game.
   examples:
     - title: "Fortnite: Battle Royale"
       description: |

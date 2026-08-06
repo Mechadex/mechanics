@@ -32,7 +32,7 @@ Main/
 
 ## Exporting Data
 You can run `generate_mechanics_table.py` to get a markdown representation of the entire data for further processing. The properties of the table are:
-Name, Symbol, Category, Short Description, Long Description, Examples, Solved Problems. 
+Name, Symbol, Category, Short Description, Long Description, Examples, Solved Problems, Drawbacks. 
 
 ## Credits
 * Exporting data was implemented by [legibleguy](https://github.com/legibleguy).
